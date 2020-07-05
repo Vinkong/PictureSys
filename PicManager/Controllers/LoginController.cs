@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PicManager.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,8 @@ namespace PicManager.Controllers
         // GET: Login
         public ActionResult LoginPage()
         {
+            //DbPicture db = new DbPicture();
+            //db.Database.CreateIfNotExists();
             return View();
         }
     }
