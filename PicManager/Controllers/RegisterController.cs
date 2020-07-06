@@ -1,51 +1,84 @@
-﻿using System;
+﻿using PicManager.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net.Mail;
+using System.Net;
 
 namespace PicManager.Controllers
 {
     public class RegisterController : Controller
     {
+
+        public DbPicture db = new DbPicture();
         // GET: Register
         public ActionResult RegisterPage()
         {
+
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult RegisterUser(User user) {
+
+            if (ModelState.IsValid)
+            {
+                string validatacode = System.Guid.NewGuid().ToString();
+                user.Code = validatacode;
+                user.Status = 0;
+                user.CreatTime = DateTime.Now;
+                db.User.Add(user);
+                db.SaveChanges();
+                SendEmail(validatacode, "1067945009@qq.com", user.UserName);
+                return RedirectToAction("LoginPage", "Login");
+            }
+           
+            
+            return View("RegisterPage",user);
+        }
+
+        public ActionResult ActivePage(string UserName,string activeCode) {
+
+            var qurey = from user in db.User
+                        where user.UserName == UserName && user.Code == activeCode
+                        select user;
+            if (qurey.Count()>0)
+            {
+                User user = qurey.FirstOrDefault();
+                user.Status = 1;
+                db.SaveChanges();
+
+                return RedirectToAction("ToLoginPage"); 
+            }
+
+            
+            return View();
+
+        }
+        public ActionResult ToLoginPage() {
+
+
             return View();
         }
 
 
-        public ActionResult SendEmial()
-        {
-            int customerID = 1;
-            string validataCode = System.Guid.NewGuid().ToString();
-            try
-            {
-                System.Net.Mail.MailAddress from = new System.Net.Mail.MailAddress(xxxxxxxx@163.com, "wode"); //填写电子邮件地址，和显示名称
-                System.Net.Mail.MailAddress to = new System.Net.Mail.MailAddress(xxxxx@qq.com, "nide"); //填写邮件的收件人地址和名称
-                //设置好发送地址，和接收地址，接收地址可以是多个
-                System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
-                mail.From = from;
-                mail.To.Add(to);
-                mail.Subject = "主题内容";
-
-                System.Text.StringBuilder strBody = new System.Text.StringBuilder();
-                strBody.Append("点击下面链接激活账号，48小时生效，否则重新注册账号，链接只能使用一次，请尽快激活！</br>");
-                strBody.Append("<a href='http://localhost:3210/Order/ActivePage?customerID=" + customerID + "&validataCode =" + validataCode + "'>点击这里</a></br>");
-
-                mail.Body = strBody.ToString();
-                mail.IsBodyHtml = true;//设置显示htmls
-                //设置好发送邮件服务地址
-                System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
-                client.Host = "smtp.163.com";
-                //填写服务器地址相关的用户名和密码信息
-                client.Credentials = new System.Net.NetworkCredential("xxxxxxxx@163.com", "xxxxxx");
-                //发送邮件
-                client.Send(mail);
-            }
-            catch { }
-
-            return new EmptyResult();
-        }
+    /// 发送激活链接.
+         /// </summary>
+         public static void SendEmail(string activeCode, string mail,string UserName)
+         {
+            MailMessage mailMsg = new MailMessage();//两个类，别混了，要引入System.Net这个Assembly
+             mailMsg.From = new MailAddress("1067945009@qq.com");//源邮件地址 ,发件人
+             mailMsg.To.Add(new MailAddress(mail));//目的邮件地址。可以有多个收件人.
+             mailMsg.Subject = "请激活在Picture网站中的注册链接";//发送邮件的标题 
+             mailMsg.Body = "<a href='http://localhost:58716/Register/ActivePage/?UserName=" + UserName+"&activeCode=" + activeCode + "'>请单击激活注册的账户</a>";//发送邮件的内容 
+             mailMsg.IsBodyHtml = true;
+             SmtpClient client = new SmtpClient("smtp.qq.com");//smtp.163.com，smtp.qq.com,发件人使用的邮箱的SMTP服务器。
+             client.Credentials = new NetworkCredential("1067945009@qq.com", "eviiclkuprkubefg");//指定发件人的邮箱的账号与密码.
+             client.Send(mailMsg);//排队发送邮件.
+         }
+        
+  
     }
 }
