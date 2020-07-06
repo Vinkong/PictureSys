@@ -12,8 +12,8 @@ namespace PicManager.Controllers
         // GET: Login
         public ActionResult LoginPage()
         {
-            //DbPicture db = new DbPicture();
-            //db.Database.CreateIfNotExists();
+            DbPicture db = new DbPicture();
+            db.Database.CreateIfNotExists();
             return View();
         }
     }
