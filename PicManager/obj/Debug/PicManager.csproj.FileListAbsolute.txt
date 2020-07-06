@@ -81,6 +81,12 @@ C:\Users\Administrator\source\repos\PicManager\PicManager\obj\Debug\PicManager.c
 C:\Users\Administrator\source\repos\PicManager\PicManager\obj\Debug\PicManager.csproj.CopyComplete
 C:\Users\Administrator\source\repos\PicManager\PicManager\obj\Debug\PicManager.dll
 C:\Users\Administrator\source\repos\PicManager\PicManager\obj\Debug\PicManager.pdb
+<<<<<<< HEAD
+C:\Users\Administrator\Desktop\PicManager\PicManager\obj\Debug\PicManager.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\PicManager\PicManager\obj\Debug\PicManager.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\PicManager\PicManager\obj\Debug\PicManager.dll
+C:\Users\Administrator\Desktop\PicManager\PicManager\obj\Debug\PicManager.pdb
+=======
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csprojAssemblyReference.cache
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csproj.CoreCompileInputs.cache
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.dll
@@ -172,3 +178,4 @@ C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\zh-Hans\EntityFr
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.Migrations.InitialCreate.resources
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csproj.GenerateResource.cache
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.Migrations.AddConfirmPassWord.resources
+>>>>>>> origin/master
