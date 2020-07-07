@@ -31,7 +31,7 @@ namespace PicManager.Controllers
                 user.CreatTime = DateTime.Now;
                 db.User.Add(user);
                 db.SaveChanges();
-                SendEmail(validatacode, "1067945009@qq.com", user.UserName);
+               // SendEmail(validatacode, "1067945009@qq.com", user.UserName);
                 return RedirectToAction("LoginPage", "Login");
             }
            

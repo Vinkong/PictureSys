@@ -81,16 +81,6 @@ C:\Users\Administrator\source\repos\PicManager\PicManager\obj\Debug\PicManager.c
 C:\Users\Administrator\source\repos\PicManager\PicManager\obj\Debug\PicManager.csproj.CopyComplete
 C:\Users\Administrator\source\repos\PicManager\PicManager\obj\Debug\PicManager.dll
 C:\Users\Administrator\source\repos\PicManager\PicManager\obj\Debug\PicManager.pdb
-<<<<<<< HEAD
-C:\Users\Administrator\Desktop\PicManager\PicManager\obj\Debug\PicManager.csprojAssemblyReference.cache
-C:\Users\Administrator\Desktop\PicManager\PicManager\obj\Debug\PicManager.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Desktop\PicManager\PicManager\obj\Debug\PicManager.dll
-C:\Users\Administrator\Desktop\PicManager\PicManager\obj\Debug\PicManager.pdb
-=======
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csprojAssemblyReference.cache
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csproj.CoreCompileInputs.cache
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.dll
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.pdb
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\PicManager.dll.config
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\PicManager.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\PicManager.pdb
@@ -141,6 +131,8 @@ C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\roslyn\vbc.rsp
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\roslyn\VBCSCompiler.exe
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\Antlr3.Runtime.dll
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\EntityFramework.dll
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\EntityFramework.SqlServer.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\Newtonsoft.Json.dll
@@ -152,6 +144,8 @@ C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\System.Web.WebPa
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\System.Web.WebPages.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\System.Web.WebPages.Razor.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\WebGrease.dll
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\EntityFramework.xml
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\EntityFramework.SqlServer.xml
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\System.Web.Helpers.xml
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\System.Web.Mvc.xml
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\System.Web.Optimization.xml
@@ -162,6 +156,7 @@ C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\System.Web.WebPa
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\Newtonsoft.Json.xml
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\Antlr3.Runtime.pdb
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\zh-Hans\EntityFramework.resources.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\zh-Hans\System.Web.Helpers.resources.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\zh-Hans\System.Web.Mvc.resources.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\zh-Hans\System.Web.Optimization.resources.dll
@@ -169,13 +164,11 @@ C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\zh-Hans\System.W
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\zh-Hans\System.Web.WebPages.resources.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csproj.CopyComplete
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\EntityFramework.dll
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\EntityFramework.SqlServer.dll
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\EntityFramework.xml
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\EntityFramework.SqlServer.xml
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\bin\zh-Hans\EntityFramework.resources.dll
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.Migrations.InitialCreate.resources
-C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csproj.GenerateResource.cache
 C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.Migrations.AddConfirmPassWord.resources
->>>>>>> origin/master
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csproj.GenerateResource.cache
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csproj.CoreCompileInputs.cache
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csproj.CopyComplete
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.dll
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.pdb
+C:\Users\孔凡中\Desktop\PictureSys\PictureSys\PicManager\obj\Debug\PicManager.csprojAssemblyReference.cache

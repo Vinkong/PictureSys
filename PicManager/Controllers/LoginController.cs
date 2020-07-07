@@ -16,17 +16,20 @@ namespace PicManager.Controllers
             //db.Database.CreateIfNotExists();
             return View();
         }
-        public ActionResult LoginIn(User user) {
+        public ActionResult UserLoginPage(User user) {
 
-            var qurey = from p in db.User
-                        where p.UserName == user.UserName && p.PassWord == user.PassWord
-                        select  p;
-            if (qurey.Count() > 0)
-            {
+            //var qurey = from p in db.User
+            //           where p.UserName == user.UserName && p.PassWord == user.PassWord
+            //           select  p;
+            int a = 1;
+           if (a > 0)
+           {
+             return View();           
+               }
 
-            }
+           ViewData["errowMsg"] = "密码或用户名错误";
 
-                return View("LoginPage");
+                return  RedirectToAction("LoginPage");
         }
     }
 }
