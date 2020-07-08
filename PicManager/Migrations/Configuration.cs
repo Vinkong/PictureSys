@@ -10,7 +10,6 @@ namespace PicManager.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "PicManager.Models.DbPicture";
         }
 
         protected override void Seed(PicManager.Models.DbPicture context)

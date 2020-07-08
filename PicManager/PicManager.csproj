@@ -128,18 +128,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FirstController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007040225112_InitialCreate.cs" />
-    <Compile Include="Migrations\202007040225112_InitialCreate.Designer.cs">
-      <DependentUpon>202007040225112_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007050843409_AddConfirmPassWord.cs" />
-    <Compile Include="Migrations\202007050843409_AddConfirmPassWord.Designer.cs">
-      <DependentUpon>202007050843409_AddConfirmPassWord.cs</DependentUpon>
+    <Compile Include="Migrations\202007080132512_AddUser.cs" />
+    <Compile Include="Migrations\202007080132512_AddUser.Designer.cs">
+      <DependentUpon>202007080132512_AddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbPicture.cs" />
@@ -147,17 +144,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bluestep.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\Default.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\003046pnywinaal3ur6ulq.jpg" />
     <Content Include="img\f.jpg" />
     <Content Include="img\logo.png" />
+    <Content Include="img\nihao.jpg" />
+    <Content Include="img\o_200103034919snow.png" />
     <Content Include="img\pic.jpg" />
     <Content Include="img\timg.jpg" />
+    <Content Include="css\normalize.css" />
+    <Content Include="img\t_200103034919snow.png" />
+    <Content Include="js\jquery.waypoints.min.js" />
+    <Content Include="js\tree.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -189,6 +195,7 @@
     <Content Include="Views\Register\ActivePage.cshtml" />
     <Content Include="Views\Register\ToLoginPage.cshtml" />
     <Content Include="Views\Login\UserLoginPage.cshtml" />
+    <Content Include="Views\First\IndexPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -208,11 +215,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007040225112_InitialCreate.resx">
-      <DependentUpon>202007040225112_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007050843409_AddConfirmPassWord.resx">
-      <DependentUpon>202007050843409_AddConfirmPassWord.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007080132512_AddUser.resx">
+      <DependentUpon>202007080132512_AddUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
