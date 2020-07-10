@@ -141,6 +141,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbPicture.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ValidateCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +197,7 @@
     <Content Include="Views\Register\ToLoginPage.cshtml" />
     <Content Include="Views\Login\UserLoginPage.cshtml" />
     <Content Include="Views\First\IndexPage.cshtml" />
+    <Content Include="Views\Shared\_MyLayoutPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

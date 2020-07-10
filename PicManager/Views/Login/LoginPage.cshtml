@@ -1,8 +1,7 @@
-﻿
+﻿@model PicManager.Models.User
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_MyLayoutPage.cshtml";
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -12,9 +11,18 @@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <title>登录</title>
+    <script type="text/javascript">
+        $(function () {
+            $("#valiCode").bind("click", function () {
+                this.src = "/Login/GetValidateCode?time=" + (new Date()).getTime();
+            });
+            //alert("good");
+        });
+    </script>
+
 </head>
 <body style="background-color:darkgrey">
-    <div> 
+    <div>
 
         <div class="container" style="height:500px; width:400px; background-color:#fff; margin-top:100px; text-align:center;border-radius:5px">
 
@@ -28,17 +36,23 @@
                 <form action="/Login/LoginPage" method="post">
                     <table style="width:100%;border-collapse:separate; border-spacing:0px 20px;">
                         <tr>
-                            <td><input name="UserName" style="width:90%;border-radius:2px;height:30px; line-height:30px; border: 1px solid #ced4da;" placeholder="&nbsp;登录用户名" /></td>
+                            <td><input name="UserName" style="float:left;width:99%;border-radius:2px;height:30px; line-height:30px; border: 1px solid #ced4da;" placeholder="&nbsp;登录用户名" value="@(Model!=null?Model.UserName:"")" /></td>
                         </tr>
-                        <tr>  <td><input type="password" name="PassWord" style="width:90%;border-radius:2px;height:30px; line-height:30px; border: 1px solid #ced4da;" placeholder="&nbsp;密码" /></td></tr>
-                        <tr><td><input type="submit" style="width:100px; height:30px; background-color:#00CCFF;border:0;letter-spacing:10px; color:#fff;" value="登录" /></td></tr>
-                        <tr><td><span style="color:red">@ViewData["errowMsg"]</span></td></tr>
+                        <tr>  <td><input type="password" name="PassWord" style="float:left;width:99%;border-radius:2px;height:30px; line-height:30px; border: 1px solid #ced4da;" placeholder="&nbsp;密码" value="@(Model!=null?Model.PassWord:"")" /></td></tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="valiCode" style="float:left;width:75%;border-radius:2px;height:30px; line-height:30px; border: 1px solid #ced4da;" placeholder="&nbsp;验证码" />
+                                <img id="valiCode" style="float:right; margin-right:1%; cursor: pointer;" src="/Login/GetValidateCode" alt="验证码" />
+                            </td>
+                        </tr>
+                        <tr><td><div style="float:left;"><input type="checkbox" name="IsCheck" /> 记住密码</div><input type="submit" style="width:100px; height:30px; background-color:#00CCFF;border:0;letter-spacing:10px; color:#fff;" value="登录" /></td></tr>
+                        <tr><td><span style="color:red">@Html.ValidationMessage("errowMsg")</span></td></tr>
 
                     </table>
                 </form>
             </div>
             <div style="margin-top:20px">
-               没有账户，<a href="/Register/RegisterPage" style="color:blue">立即注册</a>
+                没有账户，<a href="/Register/RegisterPage" style="color:blue">立即注册</a>
 
             </div>
         </div>

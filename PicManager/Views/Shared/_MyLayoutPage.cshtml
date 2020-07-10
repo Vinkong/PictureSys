@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header nav-title ">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="~/img/logo.png" class="img-rounded img-responsive center-block " style="height:40px; display:block;float:left; margin-top:3px;" />
+                <a class="navbar-brand">&nbsp;PICTURE</a>
+
+            </div>
+            <div class="collapse navbar-collapse navbar-right is-collapse">
+                <ul class="nav navbar-nav GL">
+                    <li><a href="/First/IndexPage"><span class="glyphicon glyphicon-home">&nbsp;首页</span></a></li>
+                    @{ if (Session["UserName"] != null)
+                        {
+
+                            <li><a href="/Login/UserLogout"><span class="glyphicon glyphicon-user">&nbsp;退出</span></a></li>
+                        }
+                        else
+                        {
+                            <li ><a href="/Login/LoginPage"><span class="glyphicon glyphicon-user">&nbsp;登录</span></a></li>
+                        }
+                    }
+                    <li><a href="/Register/RegisterPage"><span class="glyphicon glyphicon-link">&nbsp;注册</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-question-sign">&nbsp;帮助</span></a></li>
+                </ul>
+            </div><!-- /.nav-collapse -->
+        </div><!-- /.container -->
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+
+
+    </div>
+    <footer>
+        <div style="width:100%;background-color:black;color:#fff; height:50px;bottom:0px; text-align:center;position:absolute;">  <p>&copy; @DateTime.Now.Year - Picture网站</p></div>
+
+    </footer>
+</body>
+</html>

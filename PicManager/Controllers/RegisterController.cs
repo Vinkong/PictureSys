@@ -6,6 +6,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net.Mail;
 using System.Net;
+using System.Text;
+using System.Security.Cryptography;
+using System.Data.Entity.Infrastructure;
+using System.Web.UI;
 
 namespace PicManager.Controllers
 {
@@ -16,8 +20,6 @@ namespace PicManager.Controllers
         // GET: Register
         public ActionResult RegisterPage()
         {
-
-
             return View();
         }
         [HttpPost]
@@ -29,31 +31,64 @@ namespace PicManager.Controllers
                 user.Code = validatacode;
                 user.Status = 0;
                 user.CreatTime = DateTime.Now;
+
+                StringBuilder result = new StringBuilder();
+
+                //MD5CryptoServiceProvider   是 加密服务提供程序   用来 计算字符串的 MD5 哈希值
+                using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                {
+                    //将输入字符串转换为字节数组并计算哈希。
+                    byte[] data = md5.ComputeHash(Encoding.UTF8.GetBytes(user.PassWord));
+
+                    //X为     十六进制 X都是大写 x都为小写
+                    //2为 每次都是两位数
+                    //假设有两个数10和26，正常情况十六进制显示0xA、0x1A，这样看起来不整齐，为了好看，可以指定"X2"，这样显示出来就是：0x0A、0x1A。 
+                    //遍历哈希数据的每个字节
+                    //并将每个字符串格式化为十六进制字符串。
+                    int length = data.Length;
+                    for (int i = 0; i < length; i++)
+                        result.Append(data[i].ToString("x2"));
+
+                }
+                user.PassWord = result.ToString();
+                user.ConfirmPwd = result.ToString();
                 db.User.Add(user);
-                db.SaveChanges();
-               // SendEmail(validatacode, "1067945009@qq.com", user.UserName);
+                try
+                {
+                    //让db 不对实体验证
+                    db.Configuration.ValidateOnSaveEnabled = false;
+                    db.SaveChanges();
+                    db.Configuration.ValidateOnSaveEnabled = true;
+                }
+                catch (Exception e)
+                {
+
+                    throw;
+                }
+
+                // SendEmail(validatacode, "1067945009@qq.com", user.UserName);
                 return RedirectToAction("LoginPage", "Login");
             }
-           
-            
-            return View("RegisterPage",user);
+
+
+            return View("RegisterPage", user);
         }
 
-        public ActionResult ActivePage(string UserName,string activeCode) {
+        public ActionResult ActivePage(string UserName, string activeCode) {
 
             var qurey = from user in db.User
                         where user.UserName == UserName && user.Code == activeCode
                         select user;
-            if (qurey.Count()>0)
+            if (qurey.Count() > 0)
             {
                 User user = qurey.FirstOrDefault();
                 user.Status = 1;
                 db.SaveChanges();
 
-                return RedirectToAction("ToLoginPage"); 
+                return RedirectToAction("ToLoginPage");
             }
 
-            
+
             return View();
 
         }
@@ -62,11 +97,37 @@ namespace PicManager.Controllers
 
             return View();
         }
+        [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]//加上清除缓存
+        public ActionResult IsHaveUName(string UserName) {
 
+            var query = from u in db.User
+                        where u.UserName == UserName
+                        select u;
+            if (query.Count()>0)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
 
-    /// 发送激活链接.
-         /// </summary>
-         public static void SendEmail(string activeCode, string mail,string UserName)
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
+        [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]//加上清除缓存
+        public ActionResult IsHaveSName(string ShowUserName)
+        {
+
+            var query = from u in db.User
+                        where u.ShowUserName == ShowUserName
+                        select u;
+            if (query.Count() > 0)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
+
+        /// 发送激活链接.
+        /// </summary>
+        public static void SendEmail(string activeCode, string mail,string UserName)
          {
             MailMessage mailMsg = new MailMessage();//两个类，别混了，要引入System.Net这个Assembly
              mailMsg.From = new MailAddress("1067945009@qq.com");//源邮件地址 ,发件人

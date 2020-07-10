@@ -1,10 +1,15 @@
 ﻿<!doctype html>
+@{
+    Layout =null;
+}
 <html>
 <head>
     <meta charset="utf-8">
     <title>相册</title>
-
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/js/jquery.waypoints.min.js"></script>
     <style>
 @("@")import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
@@ -248,7 +253,7 @@ img {
             </div>
             <div class="collapse navbar-collapse navbar-right is-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/First/IndexPage"><span class="glyphicon glyphicon-home">&nbsp;首页</span></a></li>
+                    <li><a href="/First/IndexPage"><span class="glyphicon glyphicon-home">&nbsp;首页</span></a></li>
                     <li><a href="/Login/UserLogout"><span class="glyphicon glyphicon-user">&nbsp;退出</span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-question-sign">&nbsp;帮助</span></a></li>
                 </ul>

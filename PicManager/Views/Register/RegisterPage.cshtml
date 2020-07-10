@@ -1,6 +1,7 @@
 ﻿@model PicManager.Models.User
 @{
-    Layout = null;
+
+    Layout = "~/Views/Shared/_MyLayoutPage.cshtml";
 }
 
 <!DOCTYPE html>
@@ -11,35 +12,12 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <title>注册</title>
 </head>
 <body>
-   <div>
-       <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-           <div class="container">
-               <div class="navbar-header nav-title ">
-                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                       <span class="sr-only">Toggle navigation</span>
-                       <span class="icon-bar"></span>
-                       <span class="icon-bar"></span>
-                       <span class="icon-bar"></span>
-                   </button>
-                   <img src="~/img/logo.png" class="img-rounded img-responsive center-block " style="height:40px; display:block;float:left; margin-top:3px;" />
-                   <a class="navbar-brand">&nbsp;PICTURE</a>
-
-               </div>
-               <div class="collapse navbar-collapse navbar-right is-collapse">
-                   <ul class="nav navbar-nav">
-                       <li><a href="/First/IndexPage"><span class="glyphicon glyphicon-home">&nbsp;首页</span></a></li>
-                       <li><a href="/Login/LoginPage"><span class="glyphicon glyphicon-user">&nbsp;登录</span></a></li>
-                       <li class="active"><a href="/Register/RegisterPage"><span class="glyphicon glyphicon-link">&nbsp;注册</span></a></li>
-                       <li><a href="#"><span class="glyphicon glyphicon-question-sign">&nbsp;帮助</span></a></li>
-                   </ul>
-               </div><!-- /.nav-collapse -->
-           </div><!-- /.container -->
-       </div>
-
-    </div>
+  
     <style>
         .InputTR {
             width: 90%;
@@ -59,48 +37,47 @@
            </div>
        <div  style="margin-top:20px;width:90%; table-layout:fixed">
            <div style="width:80%;float:left">
-               <form  action="/Register/RegisterUser" method="post">
-                   <table style=" width:100%; border-collapse:separate; border-spacing:0px 20px; ">
-                       <tr>
-                           <td class="RegisterTd">邮箱</td>
-                           <td><input class="InputTR" name="Email" placeholder="&nbsp;需要通过邮件激活账户" value="@(Model!=null?Model.Email:"")" /></td>
-                         
-                       </tr>
-                       <tr><td></td><td style="color:red">@Html.ValidationMessageFor(m=>m.Email)</td></tr>
-                       <tr>
-                           <td class="RegisterTd">用户名</td>
-                           <td ><input class="InputTR" name="UserName" placeholder="&nbsp;不少于4个字符" value="@(Model!=null?Model.UserName:"")" /></td>
+               @using (Html.BeginForm("RegisterUser", "Register")) { 
+               <table style=" width:100%; border-collapse:separate; border-spacing:0px 20px; ">
+                   <tr>
+                       <td class="RegisterTd">邮箱</td>
+                       <td><input class="InputTR" name="Email" placeholder="&nbsp;需要通过邮件激活账户" value="@(Model != null ? Model.Email : "")" /></td>
 
-                       </tr>
-                       <tr><td></td><td style="color:red">@Html.ValidationMessageFor(m => m.UserName)</td></tr>
-                       <tr>
-                           <td class="RegisterTd">显示昵称</td>
-                           <td><input class="InputTR" name="ShowUserName" placeholder="&nbsp;不少于4个字符" value="@(Model!=null?Model.ShowUserName:"")" /></td>
-                         
-                       </tr>
-                       <tr><td></td><td style="color:red">@Html.ValidationMessageFor(m => m.ShowUserName)</td></tr>
-                       <tr>
-                           <td class="RegisterTd">密码</td>
-                           <td><input type="password" class="InputTR" name="PassWord" placeholder="&nbsp;至少8位，并包含字母、数字和特殊字符中的两种" value="@(Model!=null?Model.PassWord:"")" /></td>
-                      
-                           <td></td>
-                       </tr>
-                       <tr><td></td><td style="color:red">@Html.ValidationMessageFor(m => m.PassWord)</td></tr>
-                       <tr>
-                           <td class="RegisterTd">确认密码</td>
-                           <td><input type="password" class="InputTR" name="ConfirmPwd" placeholder="&nbsp;请输入确认密码" value="@(Model!=null?Model.ConfirmPwd:"")" /></td>
-                        
-                       </tr>
-                       <tr>  <td></td><td style="color:red">@Html.ValidationMessageFor(m => m.ConfirmPwd)</td></tr>
-                       <tr>
-                           <td></td>
-                           <td><input type="submit" style="width:100px; height:30px; background-color:#00CCFF;border:0;letter-spacing:10px; color:#fff;" value="注册" /></td>
+                   </tr>
+                   <tr><td></td><td style="color:red">@Html.ValidationMessageFor(m => m.Email)</td></tr>
+                   <tr>
+                       <td class="RegisterTd">用户名</td>
+                       <td>@Html.TextBoxFor(model => model.UserName,  new { @placeholder = " 不少于4个字符", @class= "InputTR" })</td> 
+                   </tr>
+                   <tr><td></td><td style="color:red">@Html.ValidationMessageFor(m => m.UserName)</td></tr>
+                   <tr>
+                       <td class="RegisterTd">显示昵称</td>
+                       <td>@Html.TextBoxFor(model => model.ShowUserName, new { @placeholder = " 不少于4个字符", @class = "InputTR" })</td>
 
-                       </tr>
-                   </table>
+                   </tr>
+                   <tr><td></td><td style="color:red">@Html.ValidationMessageFor(m => m.ShowUserName)</td></tr>
+                   <tr>
+                       <td class="RegisterTd">密码</td>
+                       <td><input type="password" class="InputTR" name="PassWord" placeholder="&nbsp;至少8位，并包含字母、数字和特殊字符中的两种" value="@(Model != null ? Model.PassWord : "")" /></td>
+
+                       <td></td>
+                   </tr>
+                   <tr><td></td><td style="color:red">@Html.ValidationMessageFor(m => m.PassWord)</td></tr>
+                   <tr>
+                       <td class="RegisterTd">确认密码</td>
+                       <td><input type="password" class="InputTR" name="ConfirmPwd" placeholder="&nbsp;请输入确认密码" value="@(Model != null ? Model.ConfirmPwd : "")" /></td>
+
+                   </tr>
+                   <tr>  <td></td><td style="color:red">@Html.ValidationMessageFor(m => m.ConfirmPwd)</td></tr>
+                   <tr>
+                       <td></td>
+                       <td><input type="submit" style="width:100px; height:30px; background-color:#00CCFF;border:0;letter-spacing:10px; color:#fff;" value="注册" /></td>
+
+                   </tr>
+               </table>
 
 
-               </form>
+               }
            </div>
            <div style="float:right;width:20%">
 
