@@ -29,7 +29,7 @@ namespace PicManager.Controllers
               user.PassWord = cookie.Values["UserPwd"].ToString();
              
             }
-            //db.Database.CreateIfNotExists();//codeFirst创建数据库
+           // db.Database.CreateIfNotExists();//codeFirst创建数据库
             return View(user);
         }
 
