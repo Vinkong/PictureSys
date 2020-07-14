@@ -70,6 +70,16 @@ namespace PicManager.Controllers
 
             if (qurey.Count() > 0)
             {
+                    
+                    foreach (var item in qurey)
+                    {
+                        if (item.Status==0)
+                        {
+
+                            ModelState.AddModelError("errowMsg", "请到注册的邮箱激活账户");
+                            return View("LoginPage", user);
+                        }
+                    }
                 Session["UserName"] = user.UserName;
 
                 if (IsCheck=="on")
@@ -79,7 +89,7 @@ namespace PicManager.Controllers
                     hc["UserPwd"] = user.PassWord;
                     hc.Expires = DateTime.Now.AddDays(2);
                     Response.Cookies.Add(hc);
-                    return RedirectToAction("UserLoginPage");
+               
                 }
                 else
                 {

@@ -66,7 +66,7 @@ namespace PicManager.Controllers
                     throw;
                 }
 
-                // SendEmail(validatacode, "1067945009@qq.com", user.UserName);
+                 SendEmail(validatacode, "1067945009@qq.com", user.UserName);
                 return RedirectToAction("LoginPage", "Login");
             }
 
@@ -83,7 +83,18 @@ namespace PicManager.Controllers
             {
                 User user = qurey.FirstOrDefault();
                 user.Status = 1;
-                db.SaveChanges();
+                try
+                {
+                    //让db 不对实体验证
+                    db.Configuration.ValidateOnSaveEnabled = false;
+                    db.SaveChanges();
+                    db.Configuration.ValidateOnSaveEnabled = true;
+                }
+                catch (Exception e)
+                {
+
+                    throw;
+                }
 
                 return RedirectToAction("ToLoginPage");
             }
@@ -124,6 +135,18 @@ namespace PicManager.Controllers
 
             return Json(true, JsonRequestBehavior.AllowGet);
         }
+        [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]//加上清除缓存
+        public ActionResult IsExsistMail(string Email) {
+
+            var query = from u in db.User
+                        where u.Email == Email
+                        select u;
+            if (query.Count() > 0)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
 
         /// 发送激活链接.
         /// </summary>
@@ -136,7 +159,7 @@ namespace PicManager.Controllers
              mailMsg.Body = "<a href='http://localhost:58716/Register/ActivePage/?UserName=" + UserName+"&activeCode=" + activeCode + "'>请单击激活注册的账户</a>";//发送邮件的内容 
              mailMsg.IsBodyHtml = true;
              SmtpClient client = new SmtpClient("smtp.qq.com");//smtp.163.com，smtp.qq.com,发件人使用的邮箱的SMTP服务器。
-             client.Credentials = new NetworkCredential("1067945009@qq.com", "eviiclkuprkubefg");//指定发件人的邮箱的账号与密码.
+             client.Credentials = new NetworkCredential("1067945009@qq.com", "********");//指定发件人的邮箱的账号与授权码，不是QQ密码
              client.Send(mailMsg);//排队发送邮件.
          }
         

@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_MyLayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <title>重置超时</title>
+    <script type="text/javascript">
+        $(function () {
+            $("#valiCode").bind("click", function () {
+                this.src = "/Login/GetValidateCode?time=" + (new Date()).getTime();
+            });
+            //alert("good");
+        });
+    </script>
+</head>
+<body>
+    <div class="container" style="margin-top:100px;">
+        <div style="border-bottom:1px solid  gray;font-size:18px;font-weight:bold; width:90%;">
+            操作完成
+        </div>
+
+        <div class="container" style="height:500px; width:100%; background-color:#fff; margin-top:50px; text-align:left;border-radius:5px">
+            <form action="/Login/LoginPage" method="post">
+                <table style="width:100%;border-collapse:separate; border-spacing:0px 15px;">
+                    <tr>
+                        <td style="color:forestgreen;font-weight:bold">×重置密码链接已过期</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                           没有收到重置密码邮件，您可以到邮件垃圾箱里找找。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            或者点击[<a href="/ResetPwd/ResetPwdPage">重新发送重置密码邮件</a>]。
+                        </td>
+                </table>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_MyLayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <title>ResetPwdPage</title>
+    <script type="text/javascript">
+        $(function () {
+            $("#valiCode").bind("click", function () {
+                this.src = "/Login/GetValidateCode?time=" + (new Date()).getTime();
+            });
+            $("#ResetForm").validate({
+                rules: {
+                    Email: {
+                        required: true,
+                       
+                    },
+                    valiCode: {
+                        required: true,
+                      
+                    }
+                },
+                messages: {
+                    Email: "*请填写邮箱地址",
+                    valiCode: "*请填写验证码"
+                },
+                 errorPlacement: function (error, element) {
+                    error.appendTo($(element).parent());
+                }   
+            });
+
+           
+        });
+    </script>
+    <style>
+        label.error {
+            text-align:left;
+            float:left;
+            width: 200px;
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"  style="margin-top:100px;" >
+        <div style="border-bottom:1px solid  gray;font-size:18px;font-weight:bold; width:90%;">
+           找回密码
+        </div>
+
+        <div class="container" style="height:500px; width:400px; background-color:#fff; margin-top:50px; text-align:center;border-radius:5px">
+            <form action="/ResetPwd/ResetPwdUrl" method="post" id="ResetForm">
+                <table style="width:100%;border-collapse:separate; border-spacing:0px 15px;">
+                    <tr>
+                        <td><input name="Email" style="float:left;width:99%;border-radius:2px;height:30px; line-height:30px; border: 1px solid #ced4da;" placeholder="&nbsp;注册用的邮箱" value="@(Model!=null?Model.UserName:"")" /></td>
+                 
+                   <td></td> </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="valiCode" style="float:left;width:75%;border-radius:2px;height:30px; line-height:30px; border: 1px solid #ced4da;" placeholder="&nbsp;验证码" />
+                            <img id="valiCode" style="float:right; margin-right:1%; cursor: pointer;" src="/Login/GetValidateCode" alt="验证码" />
+
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr><td>   <input type="submit" style="width:100px; height:30px; background-color:#00CCFF;border:0;letter-spacing:10px; color:#fff;" value="提交" /></td></tr>
+                    <tr><td><span style="color:red">@Html.ValidationMessage("errowMsg")</span></td></tr>
+
+                </table>
+            </form>
+           
+        </div>
+        </div>
+</body>
+</html>
