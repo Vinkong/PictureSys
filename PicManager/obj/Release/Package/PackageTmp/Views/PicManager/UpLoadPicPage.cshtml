@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_MyLayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Scripts/tinyImgUpload/css/tinyImgUpload.css" rel="stylesheet" />
+    <script src="~/Scripts/tinyImgUpload/js/tinyImgUpload.js"></script>
+    <title>UpLoadPicPage</title>
+
+    <script>
+        function uploadImg() {
+            var eleList = document.querySelectorAll("#upload");
+            var ele = eleList[0].querySelector('#img-container');
+            var formData = new FormData();
+            for (var i = 0, f; f = ele.files[i]; i++) {
+                formData.append('files'+i, f);
+            }
+          $.ajax({
+            url: "/PicManager/AddPicPage",
+            type: "post",
+            async: false,
+            contentType: false,
+            processData: false,
+            data: formData,
+              success: function (data) {
+                  if (data == "ok") {
+                  
+                      window.location.href = "@Url.Action("UserLoginPage", "Login")";         
+                  } else {
+                      alert("上传图片失败");
+                  }
+                 
+            },
+            error: function (data) {
+
+            }
+        });
+        }
+
+
+    </script>
+</head>
+<body>
+    <div class="container" style="margin-top:70px;">
+
+        <form id="formtable" enctype="multipart/form-data" method="post">
+
+
+            <div id="upload"></div>
+
+    <a style=" border-radius:5px; margin-top:10px; width:60px; display:block; height:30px; text-align:center;line-height:30px; background-color:#00CCFF;border:0;letter-spacing:10px; color:#fff;" class="submit">上传</a>
+    </form>
+            </div>
+    <script>
+        var upload = tinyImgUpload('#upload', 1);
+        document.getElementsByClassName('submit')[0].onclick = function (e) {
+
+            uploadImg();
+        }
+    </script>
+</body>
+</html>

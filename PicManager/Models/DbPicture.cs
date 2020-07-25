@@ -22,6 +22,7 @@
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<PictureInfo> PictureInfo { get; set; }
     }
 
     //public class MyEntity

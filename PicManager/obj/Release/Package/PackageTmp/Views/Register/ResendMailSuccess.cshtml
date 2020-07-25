@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_MyLayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <title>激活邮件发送</title>
+
+</head>
+<body>
+    <div class="container" style="margin-top:100px;">
+        <div style="border-bottom:1px solid  gray;font-size:18px;font-weight:bold; width:90%;">
+            发送激活邮件
+        </div>
+
+        <div class="container" style="height:500px; width:100%; background-color:#fff; margin-top:50px; text-align:left;border-radius:5px">
+            <form action="/Login/LoginPage" method="post">
+                <table style="width:100%;border-collapse:separate; border-spacing:0px 15px;">
+                    <tr>
+                        <td style="color:forestgreen;font-weight:bold">√激活邮件发送成功</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            激活链接已发送到您的邮箱，请尽快激活账户。
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

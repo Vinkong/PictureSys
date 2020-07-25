@@ -1,4 +1,5 @@
 ﻿<!doctype html>
+@model  List<PicManager.Models.ImgeList>
 @{
     Layout =null;
 }
@@ -11,6 +12,12 @@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/js/jquery.waypoints.min.js"></script>
+    <link href="~/Scripts/Viewer/css/main.css" rel="stylesheet" />
+    <link href="~/Scripts/Viewer/css/StyleSheet1.css" rel="stylesheet" />
+    <script src="~/Scripts/Viewer/js/Viewer.js"></script>
+    <script src="~/Scripts/Viewer/js/jquery-viewer.js"></script>
+    <script src="~/Scripts/Viewer/js/main.js"></script>
+
     <style>
 @("@")import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
 
@@ -234,6 +241,33 @@ img {
 .site-footer__text__link {
   color: #8287a9;
 }
+
+    </style>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .main .box {
+            width: 31%;
+            padding-bottom: 31%;
+            border: 1% solid #fff;
+            background-color: mediumpurple;
+            border-radius: 3%;
+            float: left;
+            margin: 1%;
+            position: relative; /*父元素给相对定位*/
+        }
+
+            .main .box .content {
+                position: absolute; /*子元素给绝对定位*/
+                width: 100%;
+                height: 100%;
+            }
+
+        .content img {
+            height: 100%
+        }
     </style>
 
 </head>
@@ -256,6 +290,7 @@ img {
                     <li><a href="/First/IndexPage"><span class="glyphicon glyphicon-home">&nbsp;首页</span></a></li>
                     <li><a href="/Login/UserLogout"><span class="glyphicon glyphicon-user">&nbsp;退出</span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-question-sign">&nbsp;个人中心</span></a></li>
+                    <li><a href="/PicManager/UpLoadPicPage"><span class="glyphicon ">&nbsp;上传照片</span></a></li>
                 </ul>
             </div><!-- /.nav-collapse -->
         </div><!-- /.container -->
@@ -263,126 +298,35 @@ img {
 
     <section class="timeline">
         <div class="wrapper">
-            <div class="timeline__item timeline__item--0">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1977 Aug. 20</h2>
-                    <p class="timeline__item__content__description">      <img src="~/img/003046pnywinaal3ur6ulq.jpg" />Voyager 2 launched from Kennedy Space Flight Center</p>
+            @foreach (var item in (List<PicManager.Models.ImgeList>)ViewData["PicList"] )
+            {
+
+
+                <div class="timeline__item timeline__item--0">
+                    <div class="timeline__item__station"></div>
+                    <div class="timeline__item__content">
+
+                        <h2 class="timeline__item__content__date">@item.PicDate </h2>
+
+                        <div class="main timeline__item docs-pictures ">
+                            @foreach (var imgName in item.PicNameList)
+                            {
+                                <div class="box">
+                                    <div class="content">
+                                        <img data-original="http://vinkong.51vip.biz:38239/@imgName" src="http://vinkong.51vip.biz:38239/@imgName" />
+                                    </div>
+                                   
+                                </div>
+                            }
+
+
+
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="timeline__item timeline__item--1">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1977 Sept. 5</h2>
-                    <p class="timeline__item__content__description"><img src="~/img/nihao.jpg" />>Voyager 1 launched from Kennedy Space Flight Center, Voyager 1 returns first spacecraft photo of Earth and Moon</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--2">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1979 Mar. 5</h2>
-                    <p class="timeline__item__content__description">Voyager 1 makes its closest approach to Jupiter</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--3">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1979 July 9</h2>
-                    <p class="timeline__item__content__description">Voyager 2 makes its closest approach to Jupiter</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--4">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1980 Nov. 12</h2>
-                    <p class="timeline__item__content__description">Voyager 1 flies by Saturn, Voyager 1 begins its trip out of the Solar System</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--5">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1981 Aug. 25</h2>
-                    <p class="timeline__item__content__description">Voyager 2 flies by Saturn</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--6">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1982</h2>
-                    <p class="timeline__item__content__description">Deep Space Network upgrades two 26-m antennas to 34-m</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--7">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1986 Jan. 24</h2>
-                    <p class="timeline__item__content__description">Voyager 2 has the first-ever encounter with Uranus, Deep Space Network begins expansion of 64-m antennas to 70-m</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--8">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1987</h2>
-                    <p class="timeline__item__content__description">Voyager 2 'observes' Supernova 1987A</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--9">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1988</h2>
-              
-                    <p class="timeline__item__content__description">Voyager 2 returns first color images of Neptune</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--10">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1989 Aug. 25</h2>
-                    <p class="timeline__item__content__description">Voyager 2 is the first spacecraft to observe Neptune, Voyager 2 begins its trip out of the Solar System, below the ecliptic plane</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--11">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1990 Jan. 1</h2>
-                    <p class="timeline__item__content__description">Begins Voyager Interstellar Mission</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--12">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1990 Feb. 14</h2>
-                    <p class="timeline__item__content__description">Last Voyager Images - Portrait of the Solar System</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--13">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">1998 Feb. 17</h2>
-                    <p class="timeline__item__content__description">Voyager 1 passes Pioneer 10 to become the most distant human-made object in space</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--14">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">2004 Dec. 15</h2>
-                    <p class="timeline__item__content__description">Voyager 1 crosses Termination Shock</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--15">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">2007 Sep. 5</h2>
-                    <p class="timeline__item__content__description">Voyager 2 crosses Termination Shock</p>
-                </div>
-            </div>
-            <div class="timeline__item timeline__item--16">
-                <div class="timeline__item__station"></div>
-                <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">2012 Aug. 25</h2>
-                    <p class="timeline__item__content__description">Voyager 1 enters Interstellar Space</p>
-                </div>
-            </div>
+            }
+       
         </div>
     </section>
 

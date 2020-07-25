@@ -87,4 +87,5 @@ C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Release\PicManager.
 C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Release\PicManager.dll
 C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Release\PicManager.pdb
 C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Release\PicManager.csprojAssemblyReference.cache
-C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Release\PicManager.Migrations.initial.resources
+C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Release\PicManager.Migrations.AddPicClass1.resources
+C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Release\PicManager.Migrations.AddPicUserId.resources

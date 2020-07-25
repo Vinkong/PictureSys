@@ -31,10 +31,10 @@
       <publishTime>07/07/2020 17:24:50</publishTime>
     </File>
     <File Include="bin/PicManager.dll">
-      <publishTime>07/14/2020 14:01:10</publishTime>
+      <publishTime>07/25/2020 17:34:17</publishTime>
     </File>
     <File Include="bin/PicManager.pdb">
-      <publishTime>07/14/2020 14:01:10</publishTime>
+      <publishTime>07/25/2020 17:34:17</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>07/07/2020 17:24:50</publishTime>
@@ -282,6 +282,9 @@
     <File Include="img/003046pnywinaal3ur6ulq.jpg">
       <publishTime>07/08/2020 11:12:50</publishTime>
     </File>
+    <File Include="img/2.jpg">
+      <publishTime>07/08/2020 11:12:50</publishTime>
+    </File>
     <File Include="img/f.jpg">
       <publishTime>07/07/2020 17:24:48</publishTime>
     </File>
@@ -296,6 +299,36 @@
     </File>
     <File Include="img/pic.jpg">
       <publishTime>07/07/2020 17:24:48</publishTime>
+    </File>
+    <File Include="img/test/1.jpg">
+      <publishTime>07/15/2020 11:42:50</publishTime>
+    </File>
+    <File Include="img/test/10.jpg">
+      <publishTime>07/15/2020 11:42:50</publishTime>
+    </File>
+    <File Include="img/test/2.jpg">
+      <publishTime>07/15/2020 11:42:50</publishTime>
+    </File>
+    <File Include="img/test/3.jpg">
+      <publishTime>07/15/2020 11:42:50</publishTime>
+    </File>
+    <File Include="img/test/4.jpg">
+      <publishTime>07/15/2020 11:42:50</publishTime>
+    </File>
+    <File Include="img/test/5.jpg">
+      <publishTime>07/15/2020 11:42:50</publishTime>
+    </File>
+    <File Include="img/test/6.jpg">
+      <publishTime>07/15/2020 11:42:50</publishTime>
+    </File>
+    <File Include="img/test/7.jpg">
+      <publishTime>07/15/2020 11:42:50</publishTime>
+    </File>
+    <File Include="img/test/8.jpg">
+      <publishTime>07/15/2020 11:42:50</publishTime>
+    </File>
+    <File Include="img/test/9.jpg">
+      <publishTime>07/15/2020 11:42:50</publishTime>
     </File>
     <File Include="img/timg.jpg">
       <publishTime>07/07/2020 17:24:48</publishTime>
@@ -348,20 +381,116 @@
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>07/07/2020 17:24:47</publishTime>
     </File>
+    <File Include="Scripts/tinyImgUpload/css/tinyImgUpload.css">
+      <publishTime>07/25/2020 17:09:21</publishTime>
+    </File>
+    <File Include="Scripts/tinyImgUpload/js/tinyImgUpload.js">
+      <publishTime>07/20/2020 10:08:09</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/css/main.css">
+      <publishTime>07/16/2020 10:15:48</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/css/StyleSheet1.css">
+      <publishTime>07/16/2020 09:25:05</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/HtmlPage1.html">
+      <publishTime>07/17/2020 15:38:57</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/thumbnails/tibet-1.jpg">
+      <publishTime>07/16/2020 09:23:18</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/thumbnails/tibet-2.jpg">
+      <publishTime>07/16/2020 09:23:18</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/thumbnails/tibet-3.jpg">
+      <publishTime>07/16/2020 09:23:18</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/thumbnails/tibet-4.jpg">
+      <publishTime>07/16/2020 09:23:18</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/thumbnails/tibet-5.jpg">
+      <publishTime>07/16/2020 09:23:18</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/thumbnails/tibet-6.jpg">
+      <publishTime>07/16/2020 09:23:18</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/thumbnails/tibet-7.jpg">
+      <publishTime>07/16/2020 09:23:18</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/thumbnails/tibet-8.jpg">
+      <publishTime>07/16/2020 09:23:18</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/thumbnails/tibet-9.jpg">
+      <publishTime>07/16/2020 09:23:18</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/tibet-1.jpg">
+      <publishTime>07/16/2020 09:23:18</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/tibet-2.jpg">
+      <publishTime>07/16/2020 09:23:19</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/tibet-3.jpg">
+      <publishTime>07/16/2020 09:23:19</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/tibet-4.jpg">
+      <publishTime>07/16/2020 09:23:19</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/tibet-5.jpg">
+      <publishTime>07/16/2020 09:23:19</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/tibet-6.jpg">
+      <publishTime>07/16/2020 09:23:19</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/tibet-7.jpg">
+      <publishTime>07/16/2020 09:23:19</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/tibet-8.jpg">
+      <publishTime>07/16/2020 09:23:19</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/images/tibet-9.jpg">
+      <publishTime>07/16/2020 09:23:19</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/js/jquery-viewer.js">
+      <publishTime>07/16/2020 09:21:00</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/js/main.js">
+      <publishTime>07/16/2020 09:20:19</publishTime>
+    </File>
+    <File Include="Scripts/Viewer/js/Viewer.js">
+      <publishTime>07/16/2020 09:19:40</publishTime>
+    </File>
+    <File Include="Views/First/ButiPage.cshtml">
+      <publishTime>07/16/2020 15:58:29</publishTime>
+    </File>
     <File Include="Views/First/IndexPage.cshtml">
-      <publishTime>07/10/2020 16:27:14</publishTime>
+      <publishTime>07/16/2020 14:38:40</publishTime>
     </File>
     <File Include="Views/Login/LoginPage.cshtml">
-      <publishTime>07/11/2020 14:49:52</publishTime>
+      <publishTime>07/15/2020 08:40:02</publishTime>
     </File>
     <File Include="Views/Login/UserLoginPage.cshtml">
-      <publishTime>07/11/2020 10:13:19</publishTime>
+      <publishTime>07/25/2020 15:20:35</publishTime>
+    </File>
+    <File Include="Views/PicManager/AddPicPage.cshtml">
+      <publishTime>07/17/2020 16:19:56</publishTime>
+    </File>
+    <File Include="Views/PicManager/UpLoadPicPage.cshtml">
+      <publishTime>07/25/2020 17:15:09</publishTime>
     </File>
     <File Include="Views/Register/ActivePage.cshtml">
       <publishTime>07/11/2020 09:23:01</publishTime>
     </File>
+    <File Include="Views/Register/ReEmailPage.cshtml">
+      <publishTime>07/15/2020 08:47:18</publishTime>
+    </File>
     <File Include="Views/Register/RegisterPage.cshtml">
-      <publishTime>07/14/2020 11:28:28</publishTime>
+      <publishTime>07/24/2020 10:07:54</publishTime>
+    </File>
+    <File Include="Views/Register/RegisterSuccess.cshtml">
+      <publishTime>07/14/2020 15:04:24</publishTime>
+    </File>
+    <File Include="Views/Register/ResendMailSuccess.cshtml">
+      <publishTime>07/15/2020 09:10:21</publishTime>
     </File>
     <File Include="Views/Register/ToLoginPage.cshtml">
       <publishTime>07/11/2020 09:32:54</publishTime>
@@ -379,7 +508,7 @@
       <publishTime>07/13/2020 15:55:43</publishTime>
     </File>
     <File Include="Views/ResetPwd/SuccessMailPage.cshtml">
-      <publishTime>07/13/2020 17:22:57</publishTime>
+      <publishTime>07/14/2020 15:04:37</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>07/07/2020 17:24:47</publishTime>
@@ -397,7 +526,7 @@
       <publishTime>07/07/2020 17:24:47</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/14/2020 14:01:11</publishTime>
+      <publishTime>07/14/2020 14:37:16</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -13,5 +13,11 @@ namespace PicManager.Controllers
         {
                 return View();
         }
+
+        //壁纸
+        public ActionResult ButiPage() {
+
+            return View();
+        }
     }
 }

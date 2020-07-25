@@ -259,6 +259,7 @@ C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Debug\PicManager.cs
 C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Debug\PicManager.csproj.CopyComplete
 C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Debug\PicManager.dll
 C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Debug\PicManager.pdb
-C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Debug\PicManager.csprojAssemblyReference.cache
-C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Debug\PicManager.Migrations.initial.resources
+C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Debug\PicManager.Migrations.AddPicClass1.resources
 C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Debug\PicManager.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Debug\PicManager.Migrations.AddPicUserId.resources
+C:\Users\Administrator\Desktop\Pic\PictureSys\PicManager\obj\Debug\PicManager.csprojAssemblyReference.cache

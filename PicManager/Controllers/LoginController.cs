@@ -100,19 +100,31 @@ namespace PicManager.Controllers
                         Response.Cookies.Add(hc);                      
                     }
                 }
-                return View("UserLoginPage");
+                return RedirectToAction("UserLoginPage");
             }
             }
             ModelState.AddModelError("errowMsg", "密码或用户名错误");
             return View ("LoginPage",user);
-
-          
         }
 
+       //获取相册
         public ActionResult UserLoginPage(User user) {
-
+       var s =     db.PictureInfo.ToList().Select(p => p.TackDate.ToString("yyyy-MM-dd") ).Distinct();
+            int b = s.Count();
+            List<ImgeList> listImg = new List<ImgeList>();
+            foreach (var item in s)
+            {
+                ImgeList img = new ImgeList();
+                img.PicDate = item;
+                var pic =  db.PictureInfo.ToList().Where(x => string.Equals(x.TackDate.ToString("yyyy-MM-dd"), item)).Select(x=>new { x.PicName,x.TackPalce});
+                foreach (var PicObj in pic)
+                {
+                    img.PicNameList.Add(PicObj.PicName);
+                }
+                listImg.Add(img);
+            }
+            ViewData["PicList"] = listImg;
             return View();
-           
         }
         public ActionResult UserLogout() {
             Session.Abandon();

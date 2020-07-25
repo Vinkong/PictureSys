@@ -130,18 +130,25 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FirstController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PicManagerController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ResetPwdController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007140556278_initial.cs" />
-    <Compile Include="Migrations\202007140556278_initial.Designer.cs">
-      <DependentUpon>202007140556278_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202007160842430_AddPicClass1.cs" />
+    <Compile Include="Migrations\202007160842430_AddPicClass1.Designer.cs">
+      <DependentUpon>202007160842430_AddPicClass1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007160849307_AddPicUserId.cs" />
+    <Compile Include="Migrations\202007160849307_AddPicUserId.Designer.cs">
+      <DependentUpon>202007160849307_AddPicUserId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbPicture.cs" />
     <Compile Include="Models\EncryptUtils.cs" />
+    <Compile Include="Models\ImgeList.cs" />
+    <Compile Include="Models\PictureInfo.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\ValidateCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,12 +163,22 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="img\003046pnywinaal3ur6ulq.jpg" />
+    <Content Include="img\2.jpg" />
     <Content Include="img\f.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="img\nihao.jpg" />
     <Content Include="img\o_200103034919snow.png" />
     <Content Include="img\pic.jpg" />
+    <Content Include="img\test\1.jpg" />
+    <Content Include="img\test\2.jpg" />
+    <Content Include="img\test\3.jpg" />
+    <Content Include="img\test\4.jpg" />
+    <Content Include="img\test\5.jpg" />
+    <Content Include="img\test\6.jpg" />
+    <Content Include="img\test\7.jpg" />
+    <Content Include="img\test\8.jpg" />
+    <Content Include="img\test\9.jpg" />
+    <Content Include="img\test\10.jpg" />
     <Content Include="img\timg.jpg" />
     <Content Include="css\normalize.css" />
     <Content Include="img\t_200103034919snow.png" />
@@ -181,6 +198,32 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\tinyImgUpload\css\tinyImgUpload.css" />
+    <Content Include="Scripts\tinyImgUpload\js\tinyImgUpload.js" />
+    <Content Include="Scripts\Viewer\css\main.css" />
+    <Content Include="Scripts\Viewer\css\StyleSheet1.css" />
+    <Content Include="Scripts\Viewer\HtmlPage1.html" />
+    <Content Include="Scripts\Viewer\images\thumbnails\tibet-1.jpg" />
+    <Content Include="Scripts\Viewer\images\thumbnails\tibet-2.jpg" />
+    <Content Include="Scripts\Viewer\images\thumbnails\tibet-3.jpg" />
+    <Content Include="Scripts\Viewer\images\thumbnails\tibet-4.jpg" />
+    <Content Include="Scripts\Viewer\images\thumbnails\tibet-5.jpg" />
+    <Content Include="Scripts\Viewer\images\thumbnails\tibet-6.jpg" />
+    <Content Include="Scripts\Viewer\images\thumbnails\tibet-7.jpg" />
+    <Content Include="Scripts\Viewer\images\thumbnails\tibet-8.jpg" />
+    <Content Include="Scripts\Viewer\images\thumbnails\tibet-9.jpg" />
+    <Content Include="Scripts\Viewer\images\tibet-1.jpg" />
+    <Content Include="Scripts\Viewer\images\tibet-2.jpg" />
+    <Content Include="Scripts\Viewer\images\tibet-3.jpg" />
+    <Content Include="Scripts\Viewer\images\tibet-4.jpg" />
+    <Content Include="Scripts\Viewer\images\tibet-5.jpg" />
+    <Content Include="Scripts\Viewer\images\tibet-6.jpg" />
+    <Content Include="Scripts\Viewer\images\tibet-7.jpg" />
+    <Content Include="Scripts\Viewer\images\tibet-8.jpg" />
+    <Content Include="Scripts\Viewer\images\tibet-9.jpg" />
+    <Content Include="Scripts\Viewer\js\jquery-viewer.js" />
+    <Content Include="Scripts\Viewer\js\main.js" />
+    <Content Include="Scripts\Viewer\js\Viewer.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -208,6 +251,12 @@
     <Content Include="Views\ResetPwd\ResetOutTime.cshtml" />
     <Content Include="Views\ResetPwd\ResetPwdNewPage.cshtml" />
     <Content Include="Views\ResetPwd\ResetPwdDb.cshtml" />
+    <Content Include="Views\Register\RegisterSuccess.cshtml" />
+    <Content Include="Views\Register\ReEmailPage.cshtml" />
+    <Content Include="Views\Register\ResendMailSuccess.cshtml" />
+    <Content Include="Views\First\ButiPage.cshtml" />
+    <Content Include="Views\PicManager\UpLoadPicPage.cshtml" />
+    <Content Include="Views\PicManager\AddPicPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -227,8 +276,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007140556278_initial.resx">
-      <DependentUpon>202007140556278_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007160842430_AddPicClass1.resx">
+      <DependentUpon>202007160842430_AddPicClass1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007160849307_AddPicUserId.resx">
+      <DependentUpon>202007160849307_AddPicUserId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

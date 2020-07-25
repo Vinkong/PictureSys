@@ -70,6 +70,7 @@ namespace PicManager.Controllers
 
         public ActionResult ResetPwdNewPage(string  DESName,string DESTime) {
 
+
             string UserName = EncryptUtils.DESDecrypt(DESName, "vinkong1", "vinkong2");
             DateTime TimeTip =  Convert.ToDateTime( EncryptUtils.DESDecrypt(DESTime, "vinkong1", "vinkong2"));
             DateTime NowDateTime = DateTime.Now;
@@ -138,10 +139,10 @@ namespace PicManager.Controllers
             mailMsg.From = new MailAddress("1067945009@qq.com");//源邮件地址 ,发件人
             mailMsg.To.Add(new MailAddress(mail));//目的邮件地址。可以有多个收件人.
             mailMsg.Subject = "Picture找回密码邮件";//发送邮件的标题 
-            mailMsg.Body = "<a href='http://localhost:58716/ResetPwd/ResetPwdNewPage/?timers="+ timers + "&DESName=" + Name + "&DESTime=" + TimeStr + "'>请点击进入修改密码界面</a>";//发送邮件的内容 
+            mailMsg.Body = "<a href='http://vinkong.51vip.biz:19491/ResetPwd/ResetPwdNewPage/?timers=" + timers + "&DESName=" + Name + "&DESTime=" + TimeStr + "'>请点击进入修改密码界面</a>";//发送邮件的内容 
             mailMsg.IsBodyHtml = true;
             SmtpClient client = new SmtpClient("smtp.qq.com");//smtp.163.com，smtp.qq.com,发件人使用的邮箱的SMTP服务器。
-            client.Credentials = new NetworkCredential("1067945009@qq.com", "*******");//指定发件人的邮箱的账号与授权码，不是qq密码.
+            client.Credentials = new NetworkCredential("1067945009@qq.com", "*********");//指定发件人的邮箱的账号与授权码，不是qq密码.
             client.Send(mailMsg);//排队发送邮件.
         }
     }
